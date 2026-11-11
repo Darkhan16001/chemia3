@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071827">
+
+  <title>4.1–4.2 | 17 (7A) топ элементтері</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="app">
+
+    <header class="topbar">
+      <div class="brand">
+        <strong>⚗ CHEMISTRY</strong>
+        <small>4.1–4.2 · 1-КУРС · ХИМИЯ</small>
+      </div>
+
+      <div class="top-info">
+        <span id="sectionName">Кіріспе</span>
+        <strong id="lessonTimer">80:00</strong>
+        <span id="pageCount">1 / 1</span>
+      </div>
+    </header>
+
+    <main id="main" class="main">
+      <section id="slide" class="slide"></section>
+    </main>
+
+    <footer class="footer">
+      <div class="signature">
+        <strong>BY DARKHAN</strong>
+        <small id="slideTitle">
+          17 (7A) топ элементтері
+        </small>
+      </div>
+
+      <div class="clock">
+        <strong id="realClock">00:00:00</strong>
+        <small>Алматы уақыты</small>
+      </div>
+
+      <div class="navigation">
+        <button id="prevBtn" class="btn secondary">
+          ← Артқа
+        </button>
+        <button id="nextBtn" class="btn primary">
+          Келесі →
+        </button>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ҚҰРАЛДАР -->
+  <div class="tools">
+    <button id="calcOpen" class="tool-btn">
+      🧮 Калькулятор
+    </button>
+    <button id="tableOpen" class="tool-btn green-btn">
+      ⚛ Менделеев кестесі
+    </button>
+  </div>
+
+  <!-- КЕЗ КЕЛГЕН ЖЕРІНЕН ЖЫЛЖИТЫН КАЛЬКУЛЯТОР -->
+  <div id="calculator" class="calculator hidden">
+    <div class="calc-head">
+      <span>🧮 Калькулятор · ⠿</span>
+      <button id="calcClose" class="close"
+              aria-label="Калькуляторды жабу">✕</button>
+    </div>
+
+    <input id="calcDisplay"
+           value=""
+           readonly
+           aria-label="Есептеу нәтижесі">
+
+    <div id="calcKeys" class="calc-grid"></div>
+
+    <div class="calc-hint">
+      Кез келген жерінен ұстап жылжыт
+    </div>
+  </div>
+
+  <!-- МЕНДЕЛЕЕВ КЕСТЕСІ -->
+  <div id="periodicModal" class="overlay hidden">
+    <div class="periodic-panel">
+      <div class="modal-head">
+        <div>
+          <h2>Менделеевтің периодтық кестесі</h2>
+          <p>118 элемент · 18 топ · 7 период</p>
+        </div>
+
+        <button id="tableClose" class="close"
+                aria-label="Кестені жабу">✕</button>
+      </div>
+
+      <div class="legend">
+        <span class="legend-halogen">17-топ: галогендер</span>
+        <span class="legend-metal">2-топ: металдар</span>
+        <span class="legend-noble">18-топ: инертті газдар</span>
+      </div>
+
+      <div class="periodic-scroll">
+        <div id="periodicGrid" class="periodic-grid"></div>
+      </div>
+
+      <div id="elementInfo" class="element-info">
+        Элементті басып таңда.
+      </div>
+    </div>
+  </div>
+</body>
+</html>

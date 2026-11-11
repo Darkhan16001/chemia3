@@ -1,0 +1,473 @@
+
+:root {
+  --bg:#071624;
+  --panel:#153951;
+  --line:#608fac;
+  --blue:#83ddff;
+  --green:#83edbb;
+  --gold:#ffdd91;
+  --red:#ffa5aa;
+  --text:#f8fcff;
+  --muted:#bed6e5;
+}
+* {box-sizing:border-box}
+html,body {
+  margin:0;width:100%;height:100%;
+  color:var(--text);background:var(--bg);
+  font-family:"Segoe UI",Arial,sans-serif;
+}
+button,input {font:inherit}
+button {cursor:pointer}
+.hidden {display:none!important}
+.app {
+  height:100vh;height:100dvh;
+  display:flex;flex-direction:column;overflow:hidden;
+  background:
+    radial-gradient(circle at 82% 12%,#126b9b55,transparent 42%),
+    radial-gradient(circle at 8% 94%,#167a6148,transparent 43%),
+    linear-gradient(125deg,#061522,#0d3049,#071724);
+}
+.topbar {
+  min-height:73px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:10px 24px;
+  border-bottom:1px solid var(--line);
+  background:#071b2cef;
+}
+.brand {display:flex;flex-direction:column;gap:4px}
+.brand strong {font-size:27px;color:var(--blue);font-weight:900}
+.brand small {font-size:13px;color:var(--gold);letter-spacing:2px}
+.top-info {display:flex;gap:20px;align-items:center;font-weight:800}
+#lessonTimer {
+  font-size:30px;color:var(--gold);
+  font-variant-numeric:tabular-nums;
+}
+#pageCount {color:var(--blue)}
+.main {
+  flex:1;min-height:0;overflow-y:auto;
+  padding:24px 36px 30px;
+  scrollbar-color:#5688a5 #102d43;
+}
+.slide {
+  width:100%;min-height:100%;max-width:1500px;
+  margin:auto;display:flex;flex-direction:column;
+  justify-content:center;
+  animation:appear .2s ease;
+}
+@keyframes appear {
+  from {opacity:0;transform:translateY(8px)}
+  to {opacity:1;transform:translateY(0)}
+}
+h1 {
+  margin:10px 0 20px;
+  font-size:clamp(43px,4.6vw,76px);
+  line-height:1.14;
+}
+h2 {
+  margin:0 0 18px;
+  font-size:clamp(33px,3vw,50px);
+  line-height:1.19;
+}
+h3 {
+  margin:0 0 13px;
+  font-size:clamp(25px,2.2vw,36px);
+  color:var(--blue);
+}
+p,li {
+  font-size:clamp(21px,1.75vw,29px);
+  line-height:1.48;
+}
+li {margin-bottom:8px}
+ul,ol {padding-left:32px}
+.subtitle {
+  color:var(--blue);font-size:19px;
+  font-weight:900;letter-spacing:2px;margin-bottom:13px;
+}
+.blue {color:var(--blue)}
+.green-text {color:var(--green)}
+.gold {color:var(--gold)}
+.red {color:var(--red)}
+.muted {color:var(--muted)}
+.center {text-align:center}
+.big {font-size:clamp(45px,5vw,76px);font-weight:900}
+.small {font-size:17px}
+.hero {
+  display:grid;grid-template-columns:1.2fr 1fr;
+  align-items:center;gap:28px;
+}
+.grid2 {
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+.grid3 {
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+}
+.card {
+  min-width:0;padding:24px 26px;border-radius:19px;
+  background:linear-gradient(145deg,#1b415b,#112a40);
+  border:1px solid #6698b5;
+  box-shadow:0 12px 35px #0004;
+}
+.card.green-card {
+  background:linear-gradient(145deg,#165947,#103833);
+  border-color:#6bd4ac;
+}
+.card p:last-child {margin-bottom:0}
+.card li {font-size:clamp(19px,1.6vw,26px)}
+.note {
+  margin-top:16px;padding:16px 19px;
+  background:#1b3e56;border-left:7px solid var(--gold);
+  border-radius:11px;
+  font-size:clamp(20px,1.65vw,27px);
+  line-height:1.46;
+}
+.note.blue-note {border-left-color:var(--blue)}
+.formula {
+  margin:16px 0;padding:18px;
+  background:#0d4050;border:1px solid #61b9c6;
+  border-radius:15px;
+  font-size:clamp(29px,2.7vw,46px);
+  font-weight:900;color:var(--green);
+  text-align:center;overflow-wrap:anywhere;
+}
+
+/* ФОТОЛАР */
+.photo-card {
+  margin:0;overflow:hidden;border-radius:20px;
+  background:#102b40;border:1px solid #70a4c4;
+  box-shadow:0 15px 40px #0005;
+}
+.photo-card img {
+  display:block;width:100%;height:300px;
+  object-fit:contain;background:#ecf0f1;
+}
+.photo-card figcaption {
+  padding:12px 16px;
+  font-size:17px;line-height:1.4;color:#dfedf7;
+}
+.photo-card a {color:#93e4ff}
+.photo-grid {
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:17px;
+}
+.photo-grid img {height:250px}
+.photo-fallback {
+  display:grid;place-items:center;
+  min-height:220px;padding:25px;
+  color:var(--muted);text-align:center;
+  font-size:19px;
+}
+.photo-source {
+  font-size:14px;color:var(--muted);
+  margin-top:6px;
+}
+.element-strip {
+  display:flex;flex-wrap:wrap;justify-content:center;
+  gap:10px;margin:18px 0;
+}
+.element-tile {
+  min-width:102px;text-align:center;padding:13px;
+  background:#215c82;border:1px solid #75b3d1;
+  border-radius:12px;
+}
+.element-tile b {display:block;font-size:40px}
+.element-tile small {font-size:16px}
+.shell-grid {
+  display:flex;justify-content:center;gap:15px;flex-wrap:wrap;
+}
+.shell {
+  min-width:170px;padding:20px;
+  background:#183c56;border:1px solid #6ba8c3;
+  border-radius:15px;text-align:center;
+}
+.shell strong {display:block;color:var(--gold);font-size:42px}
+.shell span {font-size:21px;color:var(--green)}
+.trend {
+  display:grid;grid-template-columns:repeat(4,1fr);
+  align-items:end;gap:12px;
+}
+.trend-part {text-align:center}
+.trend-bar {
+  width:72%;margin:auto;
+  background:linear-gradient(#7cdcff,#13628c);
+  border-radius:10px 10px 0 0;
+}
+.trend-part strong {
+  display:block;font-size:24px;margin-top:8px;
+  color:var(--gold);
+}
+.task {
+  margin-bottom:11px;padding:14px 19px;
+  border:1px solid #6398b6;border-radius:13px;
+  background:#173c55;
+}
+.task p {margin:4px 0}
+.question {
+  font-size:clamp(29px,2.7vw,44px);
+  font-weight:900;line-height:1.42;
+}
+.answer {
+  margin-top:15px;padding:19px;
+  background:#0f523d;border:1px solid #70e5b5;
+  border-radius:15px;
+  font-size:clamp(22px,1.9vw,31px);
+  line-height:1.5;
+}
+.pill {
+  display:inline-block;padding:9px 15px;
+  border-radius:25px;border:1px solid #80e6b8;
+  font-size:18px;font-weight:900;color:var(--green);
+}
+.student-grid {
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:9px;margin-top:15px;
+}
+.student-item {
+  display:flex;justify-content:space-between;align-items:center;
+  gap:7px;padding:10px;
+  background:#1a4660;border:1px solid #68a2be;
+  border-radius:11px;font-size:20px;font-weight:800;
+}
+.student-item.absent {background:#593944;opacity:.8}
+.x-btn {
+  width:39px;height:39px;flex-shrink:0;
+  background:#b2495a;color:white;
+  border:1px solid #ffb6b9;border-radius:9px;
+  font-size:22px;font-weight:900;
+}
+.x-btn.restore {background:#177e61;border-color:#75edb9}
+.team-card {
+  padding:20px;background:#163d56;
+  border:1px solid #6da0bf;border-radius:19px;
+}
+.team-card:nth-child(2) {border-color:#6bd6aa}
+.team-card:nth-child(3) {border-color:#ebbb78}
+.team-members {font-size:21px;line-height:1.8}
+.student-name {
+  font-size:clamp(48px,5vw,75px);
+  color:var(--gold);font-weight:900;margin:13px 0;
+}
+.grade-grid {
+  display:grid;grid-template-columns:repeat(5,1fr);gap:8px;
+}
+.grade-btn {
+  padding:15px 3px;
+  background:#275e7b;color:white;
+  border:1px solid #7ab6d1;
+  border-radius:10px;font-size:24px;font-weight:900;
+}
+.grade-btn:hover {background:#168064}
+.table-scroll {max-height:40vh;overflow:auto}
+table {border-collapse:collapse;width:100%;font-size:20px}
+td,th {padding:11px;text-align:left;border-bottom:1px solid #53829e}
+th {color:var(--blue)}
+
+/* ТӨМЕНГІ БӨЛІК */
+.footer {
+  flex-shrink:0;min-height:90px;
+  padding:10px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:14px;background:#081d30;
+  border-top:1px solid var(--line);
+}
+.signature {display:flex;flex-direction:column;gap:3px}
+.signature strong {
+  color:var(--gold);font-size:34px;
+  font-weight:900;letter-spacing:3px;
+}
+.signature small {font-size:14px;color:var(--muted)}
+.clock {
+  padding:8px 16px;background:#11344c;
+  border:1px solid #5d9abb;border-radius:12px;
+  text-align:center;
+}
+#realClock {
+  display:block;color:var(--blue);
+  font-size:29px;font-variant-numeric:tabular-nums;
+  letter-spacing:2px;
+}
+.clock small {font-size:13px;color:var(--muted)}
+.navigation {display:flex;gap:10px}
+.btn {
+  padding:13px 20px;
+  background:#285a78;color:white;
+  border:1px solid #73adc6;border-radius:11px;
+  font-size:19px;font-weight:900;
+}
+.btn.primary {background:#0c91b0;border-color:#8de9ff}
+.btn.success {background:#167e60;border-color:#82edbd}
+.btn.warning {background:#8a652c;border-color:#ffdd8f}
+.btn:disabled {opacity:.4;cursor:not-allowed}
+.btn:hover {filter:brightness(1.1)}
+.tools {
+  position:fixed;right:14px;bottom:108px;
+  display:flex;flex-direction:column;gap:8px;z-index:50;
+}
+.tool-btn {
+  padding:11px 13px;
+  background:#0d819e;color:#fff;
+  border:1px solid #86e3ff;border-radius:10px;
+  font-size:15px;font-weight:900;
+  box-shadow:0 12px 27px #0009;
+}
+.green-btn {background:#167858;border-color:#84eebe}
+
+/* КАЛЬКУЛЯТОР: ТҰТАСТАЙ ЖЫЛЖИДЫ */
+.calculator {
+  position:fixed;top:110px;right:15px;
+  left:auto;bottom:auto;
+  z-index:1200;width:220px;
+  max-width:calc(100vw - 12px);
+  max-height:calc(100dvh - 12px);
+  padding:9px;overflow-y:auto;
+  background:#102f48;border:1px solid #7ddfff;
+  border-radius:14px;box-shadow:0 20px 54px #000b;
+  touch-action:none;
+  user-select:none;
+  cursor:grab;
+}
+.calculator.dragging {cursor:grabbing;opacity:.94}
+.calc-head {
+  display:flex;align-items:center;justify-content:space-between;
+  gap:5px;padding:7px;margin-bottom:8px;
+  background:#23516d;border-radius:9px;
+  font-size:14px;font-weight:900;
+}
+.close {
+  padding:6px 10px;border:0;border-radius:7px;
+  color:white;background:#b34757;
+  font-size:16px;font-weight:900;
+}
+#calcDisplay {
+  width:100%;height:42px;padding:7px;
+  background:#061c30;color:white;
+  border:1px solid #72a6bf;border-radius:8px;
+  text-align:right;font-size:20px;
+  cursor:grab;
+}
+.calc-grid {
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:4px;margin-top:7px;
+}
+.calc-grid button {
+  height:36px;min-width:0;padding:2px;
+  background:#285b79;color:white;
+  border:1px solid #6ba4be;border-radius:7px;
+  font-size:17px;font-weight:900;
+  touch-action:none;
+}
+.calc-grid button:hover {background:#34799a}
+.calc-hint {
+  margin-top:7px;text-align:center;
+  color:#b3d3e7;font-size:11px;
+  pointer-events:none;
+}
+
+/* МЕНДЕЛЕЕВ КЕСТЕСІ */
+.overlay {
+  position:fixed;inset:0;z-index:2000;
+  display:flex;justify-content:center;align-items:center;
+  padding:12px;background:#000d;
+}
+.periodic-panel {
+  width:min(1650px,99vw);max-height:97vh;
+  overflow:auto;padding:17px;
+  background:#0e293f;border:1px solid #71a5bf;
+  border-radius:18px;
+}
+.modal-head {
+  display:flex;justify-content:space-between;
+  align-items:flex-start;gap:14px;
+}
+.modal-head h2 {margin:0}
+.modal-head p {font-size:17px;margin:7px 0 12px}
+.legend {display:flex;gap:8px;flex-wrap:wrap;margin:11px 0}
+.legend span {
+  padding:7px 12px;border-radius:8px;
+  font-size:15px;font-weight:800;
+}
+.legend-halogen {background:#974c70}
+.legend-metal {background:#167a59}
+.legend-noble {background:#6952a0}
+.periodic-scroll {
+  padding:12px;overflow:auto;
+  border-radius:11px;background:#061b2c;
+}
+.periodic-grid {
+  display:grid;min-width:1840px;
+  grid-template-columns:56px repeat(18,minmax(95px,1fr));
+  grid-template-rows:45px repeat(10,106px);
+  gap:5px;
+}
+.group-num,.period-num,.period-corner {
+  display:grid;place-items:center;
+  padding:3px;border:1px solid #74b6d1;
+  border-radius:8px;background:#1a4a63;
+  color:var(--gold);font-size:20px;font-weight:900;
+  text-align:center;
+}
+.period-corner,.period-num.series {font-size:11px}
+.group-num.highlight {
+  color:white;background:#96466d;
+  border:2px solid #ffd1e2;
+}
+.element {
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;position:relative;
+  padding:13px 3px 4px;gap:2px;
+  background:#226385;color:white;
+  border:1px solid #91c1d7;border-radius:8px;
+}
+.element:hover {outline:3px solid white;z-index:2}
+.element .num {
+  position:absolute;top:4px;left:6px;font-size:12px;
+}
+.element .symbol {font-size:28px;font-weight:900}
+.element .ename {
+  font-size:12px;line-height:1.12;
+  text-align:center;overflow-wrap:anywhere;
+}
+.element .mass {font-size:12px;color:#e1f2ff}
+.element.metal {background:#236c69}
+.element.group2 {background:#187a56}
+.element.nonmetal {background:#275e91}
+.element.metalloid {background:#98712f}
+.element.halogen {background:#984b70;border:2px solid #ffd0e3}
+.element.noble {background:#6b51a0}
+.element.lanth {background:#347b8d}
+.element.act {background:#81566b}
+.element-info {
+  margin-top:12px;padding:15px;
+  background:#194660;border:1px solid #6da6c0;
+  border-radius:11px;font-size:21px;line-height:1.5;
+}
+@media(max-width:1000px) {
+  .grid3 {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .student-grid {grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:700px) {
+  .topbar {padding:9px}
+  .brand strong {font-size:18px}
+  .brand small,#sectionName {display:none}
+  .top-info {gap:9px;font-size:13px}
+  #lessonTimer {font-size:21px}
+  .main {padding:13px}
+  .hero,.grid2,.grid3,.photo-grid {
+    grid-template-columns:1fr;
+  }
+  .student-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+  h1 {font-size:38px}h2 {font-size:29px}h3 {font-size:24px}
+  p,li {font-size:19px}
+  .card {padding:16px}
+  .photo-card img {height:230px}
+  .footer {padding:7px;min-height:79px}
+  .signature strong {font-size:18px}
+  .signature small {display:none}
+  .clock {padding:5px 6px}
+  #realClock {font-size:16px;letter-spacing:0}
+  .clock small {font-size:10px}
+  .btn {padding:9px;font-size:14px}
+  .tools {right:8px;bottom:94px}
+  .tool-btn {padding:8px;font-size:12px}
+}
